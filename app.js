@@ -47,7 +47,7 @@ bot.on('messageCreate', (msg) => {
 	// Anti-Spam
 	if (!msg.member.permissions.has('ADMINISTRATOR')) {
 		spam.push(msg.author.id);
-		setTimeout(() => spam.pop(msg.author.id), config.spamtime * 1000);
+		setTimeout(() => spam = spam.filter(e => e != msg.author.id), config.spamtime * 1000);
 	}
 
 	// Log
