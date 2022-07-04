@@ -12,7 +12,7 @@ module.exports.run = async (bot, msg) => {
 	if (!isNaN(num) && num > 0 && num < 180 && msg.member.permissions.has('ADMINISTRATOR')) {
 		CONFIG['spamtime'] = num;
 		fs.writeFileSync('config.json', JSON.stringify(CONFIG, null, "\t"), 'utf-8');
-		msg.reply({ content: `Anti Spam Süresi değişti artık \`${CONFIG['spamtime'] * 1000}\` saniye`, allowedMentions: { repliedUser: false } });
+		msg.reply({ content: `Anti Spam Süresi değişti artık \`${CONFIG['spamtime']}\` saniye`, allowedMentions: { repliedUser: false } });
 	} else {
 		msg.reply({ content: `Anti Spam Süresi: \`${CONFIG.spamtime}\` saniye`, allowedMentions: { repliedUser: false } });
 	}
