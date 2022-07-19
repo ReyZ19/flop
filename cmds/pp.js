@@ -1,4 +1,4 @@
-const { Client, MessageEmbed, Message } = require("discord.js");
+const { Client, EmbedBuilder, Message } = require("discord.js");
 const { getAverageColor } = require('fast-average-color-node');
 
 /**
@@ -10,7 +10,7 @@ module.exports.run = async (bot, msg) => {
 	async function reply(user) {
 		var color = await getAverageColor(user.avatarURL({ dynamic: true, size: 1024, format: 'png' }));
 		msg.reply({
-			embeds: [new MessageEmbed()
+			embeds: [new EmbedBuilder()
 				.setColor(color.hex)
 				.setDescription(
 					`${user}\r\n` +
@@ -24,7 +24,7 @@ module.exports.run = async (bot, msg) => {
 	}
 	function hata(message) {
 		msg.reply({
-			embeds: [new MessageEmbed()
+			embeds: [new EmbedBuilder()
 				.setColor('RED')
 				.setTitle("⚠️ Hata!")
 				.setDescription(message)]

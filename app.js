@@ -2,7 +2,7 @@ const { Client } = require('discord.js');
 const fs = require('fs');
 var config = require('./config.json');
 
-const bot = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const bot = new Client({ intents: ["Guilds", "GuildMessages", 'MessageContent'] });
 bot.login(config.token);
 
 bot.commands = new Map();
