@@ -1,4 +1,4 @@
-const { Client } = require('discord.js');
+const { Client, ActivityType } = require('discord.js');
 const fs = require('fs');
 var config = require('./config.json');
 
@@ -10,7 +10,7 @@ bot.commands = new Map();
 bot.once('ready', () => {
 	console.log(bot.user.tag, 'olarak giriş yapıldı!');
 
-	bot.user.setPresence({ activities: [{ name: '!cmds', type: 'WATCHING' }], status: 'online' })
+	bot.user.setPresence({ activities: [{ name: '!cmds', type: ActivityType.Watching }], status: 'online' });
 
 	fs.readdir('./cmds/', (error, files) => {
 		files.forEach(file => {
