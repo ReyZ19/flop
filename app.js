@@ -10,7 +10,7 @@ bot.commands = new Map();
 bot.once('ready', () => {
 	console.log(bot.user.tag, 'olarak giriş yapıldı!');
 
-	bot.user.setPresence({ activities: [{ name: '!cmds', type: ActivityType.Watching }], status: 'online' });
+	bot.user.setPresence({ activities: [{ name: `${config.prefix}cmds`, type: ActivityType.Watching }], status: 'online' });
 
 	fs.readdir('./cmds/', (error, files) => {
 		files.forEach(file => {
@@ -23,12 +23,11 @@ bot.once('ready', () => {
 			});
 
 			bot.commands.set(properties.help.name, properties);
-		})
-	})
+		});
+	});
 });
 
 var spam = [];
-var PREFIX = "!";
 
 bot.on('messageCreate', (msg) => {
 	// Bot ve Spam Kontrolü
@@ -38,7 +37,7 @@ bot.on('messageCreate', (msg) => {
 	// Komut kontrolü
 	var args = msg.content.substring(1).split(' ');
 	var cmd = args[0];
-	if (msg.content[0] != PREFIX) return;
+	if (msg.content[0] != config.prefix) return;
 
 	var command = bot.commands.get(cmd);
 	if (command) command.run(bot, msg, bot.commands);

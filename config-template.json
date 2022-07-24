@@ -1,4 +1,5 @@
 {
 	"token": "",
-	"spamtime": 10
+	"spamtime": 10,
+	"prefix": "!"
 }
