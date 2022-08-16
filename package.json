@@ -1,24 +1,16 @@
 {
-	"name": "flop",
-	"version": "1.0.0",
-	"description": "",
-	"main": "app.js",
-	"scripts": {
-		"start": "node app.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ReyZ19/flop.git"
-	},
-	"author": "ReyZ19",
-	"license": "GPL-3.0",
-	"bugs": {
-		"url": "https://github.com/ReyZ19/flop/issues"
-	},
-	"homepage": "https://github.com/ReyZ19/flop#readme",
-	"dependencies": {
-		"axios": "^0.27.2",
-		"discord.js": "^14.2.0",
-		"fast-average-color-node": "^2.4.0"
-	}
+  "name": "flop",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/ReyZ19/flop",
+  "author": "ReyZ19",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "discord.js": "^14.2.0",
+    "fast-average-color-node": "^2.4.0"
+  }
 }
